@@ -1,4 +1,5 @@
 require './environment'
+require 'pry'
 
 module FormsLab
   class App < Sinatra::Base
@@ -12,6 +13,7 @@ module FormsLab
     end 
     
     post '/pirates' do
+      binding.pry
       @pirate = Pirate.new(params)
 
       params[:pirate][:ships].each do |args|
